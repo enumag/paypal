@@ -372,7 +372,7 @@ class PayPal extends PaymentModule
             'PP_errors' => $this->_errors,
             'PayPal_logo' => $this->paypal_logos->getLogos(),
             'PayPal_allowed_methods' => $this->getPaymentMethods(),
-            'PayPal_country' => Country::getNameById((int) $english_language_id, (int) $this->default_country),
+            'PayPal_country' => Country::getNameById((int) $english_language_id, Configuration::get('PAYPAL_COUNTRY_DEFAULT')),
             'PayPal_country_id' => (int) $this->default_country,
             'PayPal_business' => Configuration::get('PAYPAL_BUSINESS'),
             'PayPal_payment_method' => (int) Configuration::get('PAYPAL_PAYMENT_METHOD'),
